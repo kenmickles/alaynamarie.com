@@ -92,7 +92,7 @@ body.contact header nav a.contact {
   color: #999;
 }
 
-/* Pages */
+/* Page page */
 
 body.pages.show {
   #content {
@@ -109,11 +109,11 @@ body.pages.show {
   }
 }
 
-/* Books */
+/* Book page */
 
 body.books.show {
   #mobile-photos {
-  	display: none;
+    display: none;
   }
 
   #slider {
@@ -212,4 +212,32 @@ body.books.show {
   }
 }
 
+/* Photo page */
 
+body.photos.show {
+  #content {
+    img#the_photo {
+      width: 100%;
+      @include box-shadow(1px 4px 20px #888);
+    }
+    
+    nav {
+      margin: 1em 0;
+      
+      a {
+        font-size: .96em;
+      	text-transform: lowercase;
+      	letter-spacing: -.04em;
+      	font-weight: normal;
+      }
+      
+      a.prev {
+        float: left;
+      }
+      
+      a.next {
+        float: right;
+      }
+    }
+  }
+}

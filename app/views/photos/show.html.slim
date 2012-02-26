@@ -1,0 +1,9 @@
+
+=image_tag @photo.image.url(:large), :alt => @photo.caption, :id => "the_photo"
+
+- unless @photo.caption.blank?
+  .caption=markdown @photo.caption
+
+nav
+  = link_to "« Previous", photo_path(@photo.prev), :class => "prev"
+  = link_to "Next »", photo_path(@photo.next), :class => "next"

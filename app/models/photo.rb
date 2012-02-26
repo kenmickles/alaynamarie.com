@@ -12,5 +12,26 @@ class Photo < ActiveRecord::Base
     },
     :bucket => ENV['S3_BUCKET']  ,
     :styles => {:large => "830x830>", :medium => "560x560>", :thumb => "64x64#"}
+   
+  def prev
+    book.photos.each_with_index do |photo, i|
+      if photo.id == id
+        @prev_photo = book.photos[i-1].present? ? book.photos[i-1] : book.photos.last
+        break
+      end
+    end
     
+    @prev_photo
+  end
+  
+  def next
+    book.photos.each_with_index do |photo, i|
+      if photo.id == id
+        @next_photo = book.photos[i+1].present? ? book.photos[i+1] : book.photos.last
+        break
+      end
+    end
+    
+    @next_photo
+  end
 end

@@ -4,7 +4,7 @@
       ul style="width:#{@book.photos.length*830}px"
         - @book.photos.each do |photo|
           li.photo
-            =image_tag photo.image.url(:large), :alt => "[#{photo.caption}]"
+            =image_tag photo.image.url(:large), :alt => photo.caption
             - if photo.caption.present?
               .caption=photo.caption
       nav
