@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="description" content="Alayna Rakes is a professional makeup artist serving the fashion and entertainment industries."
+    meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"
+    link rel="shortcut icon" href="#{image_path 'favicon.png'}" type="image/x-png"
+    title
+      - if is_wedding?
+        ' Alayna Marie Rakes: Weddings
+      - elsif @page_title.present?
+        ' #{@page_title} | Alayna Marie Rakes
+      - else
+        ' Alayna Marie Rakes: Professional Makeup Artist, Philadelphia, New Jersey, New York
+        
+    = stylesheet_link_tag 'application'
+    /[if !IE]
+      = stylesheet_link_tag 'iphone', :media => "only screen and (max-device-width: 480px)"
+      
+    = javascript_include_tag 'application'
+    javascript:
+      $(function(){App.init("#{controller.controller_name.camelize}")});  
+    =csrf_meta_tags
+    
+  body class="#{body_class}"
+    #wrapper
+      header
+        =link_to image_tag("logo.png", :alt => "Logo", :id => "logo"), root_path
+        - if is_wedding?
+          nav.weddings
+            =link_to "About", "/weddings", :class => "weddings"
+            =link_to "Brides", "/weddings/brides", :class => "brides"
+            =link_to "Wedding Party", "/weddings/wedding-party", :class => "wedding-party"
+            =link_to "Reception", "/weddings/reception", :class => "reception"
+            =link_to "Before & After", "/weddings/before-and-after", :class => "before-and-after"
+        - else
+          nav.standard
+            - 1.upto(3) do |i|
+              =link_to "Book #{i}", book_path(i), :class => "book#{i}"
+            =link_to "Bio", "/bio", :class => "bio"
+            =link_to "Contact", "/contact", :class => "contact"
+
+      #content.clearfix
+        == yield
+
+    
+    javascript:
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-300260-7']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
