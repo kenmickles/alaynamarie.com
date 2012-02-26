@@ -12,6 +12,6 @@ module ApplicationHelper
   end
   
   def is_wedding?
-    false
+    request.fullpath.match(/^\/weddings/)
   end
 end

@@ -81,14 +81,27 @@ header {
   
   nav.weddings {
     left: 250px;
+    
+    a {
+      margin-right: 30px;
+    }
+    
+    a:last-child {
+      margin-right: 0;
+    }
   }
 }
 
 body.book1 header nav a.book1,
 body.book2 header nav a.book2,
 body.book3 header nav a.book3,
+body.book4 header nav a.book4,
+body.book5 header nav a.book5,
+body.book6 header nav a.book6,
+body.book7 header nav a.book7,
 body.bio header nav a.bio,
-body.contact header nav a.contact {
+body.contact header nav a.contact,
+body.weddings header nav a.weddings {
   color: #999;
 }
 

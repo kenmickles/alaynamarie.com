@@ -28,10 +28,10 @@ html
         - if is_wedding?
           nav.weddings
             =link_to "About", "/weddings", :class => "weddings"
-            =link_to "Brides", "/weddings/brides", :class => "brides"
-            =link_to "Wedding Party", "/weddings/wedding-party", :class => "wedding-party"
-            =link_to "Reception", "/weddings/reception", :class => "reception"
-            =link_to "Before & After", "/weddings/before-and-after", :class => "before-and-after"
+            =link_to "Brides", "/weddings/brides", :class => "brides book4"
+            =link_to "Wedding Party", "/weddings/wedding-party", :class => "wedding-party book5"
+            =link_to "Reception", "/weddings/reception", :class => "reception book6"
+            =link_to "Before & After", "/weddings/before-and-after", :class => "before-and-after book7"
         - else
           nav.standard
             - 1.upto(3) do |i|

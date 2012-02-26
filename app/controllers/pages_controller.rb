@@ -1,12 +1,16 @@
 class PagesController < ApplicationController
   def show
-    if params[:url].present?
-      @page = Page.find_by_url(params[:url])
-    else
-      @page = Page.find(params[:id])
+    begin
+      if params[:url].present?
+        @page = Page.find_by_url(params[:url])
+      else
+        @page = Page.find(params[:id])
+      end
+
+      @page_title = @page.title
+      @body_class = @page.url.underscore
+    rescue
+      render :file => "public/404.html", :status => 404, :layout => false
     end
-    
-    @page_title = @page.title
-    @body_class = @page.url.underscore
   end
 end
