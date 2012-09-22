@@ -1,0 +1,21 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+
+$ ->
+  # close flash notices then the "x" is clicked
+  $('.alert a.close').click (e) ->
+    e.preventDefault()
+    $(@).closest('.alert').slideUp()
+    
+  # make photos sortable
+  $('body.books.edit ul.thumbnails').sortable().disableSelection()
+  
+  $('body.books.edit form.book').submit (e) ->
+    photo_ids = []
+    
+    $('.thumbnail').each ->
+      photo_ids.push $(@).data('id')
+
+    $(@).append('<input type="hidden" name="photo_ids" value="' + photo_ids.join(',') + '">')
+  

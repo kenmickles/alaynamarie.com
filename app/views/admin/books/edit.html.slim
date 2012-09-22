@@ -1,0 +1,18 @@
+
+.page-header.clearfix
+  h1.pull-left = @page_title
+  = link_to "Add a Photo", new_admin_photo_path(:book => @book.id), :class => "btn btn-small btn-primary pull-right"
+
+= semantic_form_for @book, :url => admin_book_path do |f|
+  = f.inputs do
+    = f.input :name
+    
+  p.muted Drag to reorder photos
+  ul.thumbnails
+    - @book.photos.each do |photo|
+      li.span1
+        = link_to image_tag(photo.image.url(:thumb), :alt => photo.caption, :title => photo.caption), edit_admin_photo_path(photo), :class => "thumbnail", "data-id" => photo.id
+    
+  = f.actions do
+    = f.action :submit, :as => :button
+    small.cancel (or #{link_to "Cancel", :back})

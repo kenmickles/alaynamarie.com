@@ -1,0 +1,17 @@
+
+.page-header
+  h1 = @page_title
+  
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Photos
+      th
+  tbody
+    - @books.each do |book|
+      tr
+        td = link_to book.name, book_path(book)
+        td = book.photos.count
+        td = link_to "Edit book", edit_admin_book_path(book), :class => "btn"
+        

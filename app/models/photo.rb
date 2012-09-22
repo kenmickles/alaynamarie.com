@@ -1,5 +1,10 @@
 class Photo < ActiveRecord::Base
   belongs_to :book
+    
+  validates :book_id, :presence => true
+  validates :image_file_name, :presence => true
+  
+  after_create :set_birth_weight
   
   # paperclip
   has_attached_file :image,
@@ -33,5 +38,11 @@ class Photo < ActiveRecord::Base
     end
     
     @next_photo
+  end
+  
+  def set_birth_weight
+    if book_id.present? and book.photos[-2].present?
+      update_attribute(:weight, book.photos[-2].weight + 1)
+    end
   end
 end

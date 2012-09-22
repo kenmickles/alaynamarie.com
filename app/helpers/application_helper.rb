@@ -4,7 +4,7 @@ module ApplicationHelper
   end
   
   def markdown_hint
-    "Supports <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> formatting".html_safe
+    "<small class='muted'>Supports <a href='http://daringfireball.net/projects/markdown/'>Markdown</a> formatting</small>".html_safe
   end
   
   def body_class

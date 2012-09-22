@@ -1,0 +1,12 @@
+.page-header
+  h1 = @page_title
+
+= semantic_form_for @page, :url => admin_page_path do |f|
+  = f.inputs do
+    = f.input :url, :label => "URL"
+    = f.input :title    
+    = f.input :body, :hint => markdown_hint
+    
+  = f.actions do
+    = f.action :submit, :as => :button
+    small.cancel (or #{link_to "Cancel", :back})

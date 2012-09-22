@@ -1,0 +1,5 @@
+.page-header.clearfix
+  h1.pull-left = @page_title
+  = link_to "Delete photo", admin_photo_path, :class => "btn btn-danger btn-small pull-right", :method => "delete", :confirm => "Are you sure?"
+  
+= render "form"

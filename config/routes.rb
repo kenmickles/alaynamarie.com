@@ -11,6 +11,14 @@ AlaynaMarie::Application.routes.draw do
   match 'weddings/reception' => 'books#show', :id => 6
   match 'weddings/before-and-after' => 'books#show', :id => 7
   
+  # control panel
+  namespace :admin do
+    root :to => 'books#index'
+    resources :books, :only => [:index, :edit, :update]
+    resources :pages, :only => [:index, :edit, :update]
+    resources :photos    
+  end
+  
   # send everything else to the pages controller
   get '*url' => 'pages#show'
 end

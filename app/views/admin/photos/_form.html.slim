@@ -1,0 +1,14 @@
+- @photo.book_id = params[:book] if params[:book].present? 
+
+= semantic_form_for @photo, :url => (@photo.id.present? ? admin_photo_path : admin_photos_path), :html => {:multipart => true} do |f|
+  = f.inputs do
+    - unless @photo.image_file_name.blank?
+      p.current-photo
+        = link_to image_tag(@photo.image.url(:medium), :alt => "[Current Photo]"), @photo.image.url(:large)
+    = f.input :image
+    = f.input :caption
+    = f.input :book
+    
+  = f.actions do
+    = f.action :submit, :as => :button
+    small.cancel (or #{link_to "Cancel", :back})

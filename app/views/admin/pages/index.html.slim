@@ -1,0 +1,16 @@
+
+.page-header
+  h1 = @page_title
+  
+table.table.table-striped
+  thead
+    tr
+      th Title
+      th URL
+      th
+  tbody
+    - @pages.each do |page|
+      tr
+        td = link_to page.title, "/#{page.url}"
+        td = page.url
+        td = link_to "Edit page", edit_admin_page_path(page), :class => "btn"

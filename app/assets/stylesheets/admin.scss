@@ -1,0 +1,28 @@
+@import "bootstrap";
+
+body {
+  padding: 60px;
+}
+
+.navbar .brand {
+  margin-left: 0;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.page-header a.pull-right {
+  margin-top: 20px;
+}
+
+form.formtastic {
+  textarea {
+    width: 600px;
+    height: 300px;
+  }
+  
+  .form-actions small.cancel {
+    margin-left: 10px;
+  }
+}
