@@ -19,6 +19,9 @@ AlaynaMarie::Application.routes.draw do
     resources :photos    
   end
   
+  # Send /login to the admin section
+  match '/login' => redirect("/admin/")
+  
   # send everything else to the pages controller
   get '*url' => 'pages#show'
 end
