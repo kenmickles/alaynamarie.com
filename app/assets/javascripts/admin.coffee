@@ -11,6 +11,7 @@ $ ->
   # make photos sortable
   $('body.books.edit ul.thumbnails').sortable().disableSelection()
   
+  # add photo_ids param before submitting the book form
   $('body.books.edit form.book').submit (e) ->
     photo_ids = []
     
