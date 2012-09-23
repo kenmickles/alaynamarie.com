@@ -12,6 +12,7 @@ gem 'slim'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'rdiscount'
+gem 'dalli'
 gem 'jquery-rails'
 
 # Gems used only for assets and not required
