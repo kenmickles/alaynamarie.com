@@ -1,66 +1,66 @@
 @import "bootstrap";
 
 body {
-	font: 12pt arial, helvetica, sans-serif;
-	color: #333;
-	background-color: #fff;
-	background-image: url(bg.jpg);
-	background-repeat: repeat-both;
+  font: 12pt arial, helvetica, sans-serif;
+  color: #333;
+  background-color: #fff;
+  background-image: url(bg.jpg);
+  background-repeat: repeat-both;
 }
 
 a {
-	color: #000;
-	font-weight: bold;
-	text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover {
-	color: #999;
-	text-decoration: none;
+  color: #999;
+  text-decoration: none;
 }
 
 h1 {
-	font: normal 1.8em helvetica, arial, sans-serif;
-	font-style: italic;
-	margin: 0 0 8px 0;
-	padding: 0;
-	color: #999;
-	letter-spacing: -0.02em;
+  font: normal 1.8em helvetica, arial, sans-serif;
+  font-style: italic;
+  margin: 0 0 8px 0;
+  padding: 0;
+  color: #999;
+  letter-spacing: -0.02em;
 }
 
 h3 {
-	color: #666;
-	font: normal 1.2em  helvetica, arial, sans-serif;
-	margin: 24px 0 14px;
-	padding: 0;
-	letter-spacing: -0.02em;	
+  color: #666;
+  font: normal 1.2em  helvetica, arial, sans-serif;
+  margin: 24px 0 14px;
+  padding: 0;
+  letter-spacing: -0.02em;  
 }
 
 p.none {
-	font-style: italic;
+  font-style: italic;
 }
 
 #wrapper {
-	width: 830px;
-	margin: 50px auto;
+  width: 830px;
+  margin: 50px auto;
 }
 
 header {
-	position: relative;
-	height: 94px;
-	margin-bottom: 30px;
+  position: relative;
+  height: 94px;
+  margin-bottom: 30px;
 
   #logo {
-  	position: absolute;
-  	left: 0;
-  	top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   nav {
-  	position: absolute;
-  	left: 272px;
-  	bottom: 0;
-  	height: 20px;	
+    position: absolute;
+    left: 272px;
+    bottom: 0;
+    height: 20px; 
   
     a {
       text-transform: uppercase;
@@ -75,7 +75,7 @@ header {
     }
 
     a.active, a:hover {
-	    color: #999;
+      color: #999;
     }
   }
   
@@ -109,16 +109,16 @@ body.weddings header nav a.weddings {
 
 body.pages.show {
   #content {
-  	background-color: #fff;
-  	border: 1px solid #eee;
-  	@include box-shadow(0 4px 20px #eee);
-	  padding: 24px;
-	  
-  	img {
-  	  float: left;
-    	@include box-shadow(1px 4px 20px #888);
-    	margin: 1em 2em 1em .5em;
-  	} 
+    background-color: #fff;
+    border: 1px solid #eee;
+    @include box-shadow(0 4px 20px #eee);
+    padding: 24px;
+    
+    img {
+      float: left;
+      @include box-shadow(1px 4px 20px #888);
+      margin: 1em 2em 1em .5em;
+    } 
   }
 }
 
@@ -131,45 +131,45 @@ body.books.show {
 
   #slider {
     @include box-shadow(1px 4px 20px #888);
-  	margin-bottom: 20px;
-  	height: 553px;
-  	width: 830px;
-  	overflow-x: hidden;
-  	position: relative;
-  	
+    margin-bottom: 20px;
+    height: 553px;
+    width: 830px;
+    overflow-x: hidden;
+    position: relative;
+    
     ul, li {
-    	margin:0;
-    	padding:0;
-    	list-style:none;
-    	background-color: #333;
-    	text-align: center;
+      margin:0;
+      padding:0;
+      list-style:none;
+      background-color: #333;
+      text-align: center;
     }
 
     li {
-    	width:830px;
-    	height:553px;
-    	overflow:hidden;
-    	float: left;
-    	position: relative;
-    	background-image: url(black_stripe.gif);
-    	
-    	img {
+      width:830px;
+      height:553px;
+      overflow:hidden;
+      float: left;
+      position: relative;
+      background-image: url(black_stripe.gif);
+      
+      img {
         @include box-shadow(1px 1px 20px #111);
         height: 553px;
         max-width: none;
       }
       
       .caption {
-      	position: absolute;
-      	bottom: 0;
-      	left: 0;
-      	width: 806px;
-      	color: #fff;
-      	padding: 8px 12px;
-      	text-align: left;
-      	text-shadow: 1px 1px 2px #333;
-      	font-size: .92em;
-      	background-image: url(caption_bg.png);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 806px;
+        color: #fff;
+        padding: 8px 12px;
+        text-align: left;
+        text-shadow: 1px 1px 2px #333;
+        font-size: .92em;
+        background-image: url(caption_bg.png);
       }
     }
     
@@ -178,16 +178,16 @@ body.books.show {
       
       a {
         background: url(arrows.png);
-      	width: 30px;
-      	height: 30px;
-      	display: block;
-      	position: absolute;
-      	top: 250px;
-      	outline: none;
-      	
-      	span {
-      	  display: none;
-      	}
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        top: 250px;
+        outline: none;
+        
+        span {
+          display: none;
+        }
       }
       
       a.prev {
@@ -201,26 +201,26 @@ body.books.show {
     }
     
     &:hover nav {    
-    	display: block;
+      display: block;
     }
   }
 
   #slide-bar {
-  	height: 8px;
-  	background-color: #e2e2e2;
-  	position: relative;
-  	margin: 35px 35px 50px;
+    height: 8px;
+    background-color: #e2e2e2;
+    position: relative;
+    margin: 35px 35px 50px;
 
     a.ui-slider-handle {
-    	background:url(slider.png);
-    	font-weight:normal;
-    	width: 100px;
-    	height: 30px;
-    	position: absolute;
-    	z-index: 2;
-    	margin-left:-50px;
-    	top:-0.3em;	
-    	outline: none;
+      background:url(slider.png);
+      font-weight:normal;
+      width: 100px;
+      height: 30px;
+      position: absolute;
+      z-index: 2;
+      margin-left:-50px;
+      top:-0.3em; 
+      outline: none;
     }
   }
 }
@@ -239,9 +239,10 @@ body.photos.show {
       
       a {
         font-size: .96em;
-      	text-transform: lowercase;
-      	letter-spacing: -.04em;
-      	font-weight: normal;
+        text-transform: lowercase;
+        letter-spacing: -.04em;
+        font-weight: normal;
+        text-shadow: 1px 1px 9px #fff;
       }
       
       a.prev {
@@ -251,6 +252,14 @@ body.photos.show {
       a.next {
         float: right;
       }
+    }
+    
+    .caption {
+      font-size: .92em;
+      background-color: #fff;
+      border: 1px solid #eee;
+      @include box-shadow(0 4px 20px #eee);
+      padding: 14px 12px 8px;
     }
   }
 }
