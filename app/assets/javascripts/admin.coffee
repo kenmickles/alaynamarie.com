@@ -3,6 +3,8 @@
 //= require jquery-ui
 
 $ ->
+  return null unless $('body').is('.admin')
+  
   # close flash notices then the "x" is clicked
   $('.alert a.close').click (e) ->
     e.preventDefault()

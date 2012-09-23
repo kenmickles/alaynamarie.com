@@ -1,15 +1,15 @@
 #photos
   - unless @book.photos.empty?
     #slider
-      ul style="width:#{@book.photos.length*830}px"
+      ul style="width:#{@book.photos.length*830}px" 
         - @book.photos.each do |photo|
           li.photo
-            =image_tag photo.image.url(:large), :alt => photo.caption
+            = image_tag photo.image.url(:large), :alt => photo.caption
             - if photo.caption.present?
               .caption=photo.caption
       nav
-        =link_to "<span>prev</span>".html_safe, '#', :class => "prev"
-        =link_to "<span>next</span>".html_safe, '#', :class => "next"
+        = link_to "<span>prev</span>".html_safe, '#', :class => "prev"
+        = link_to "<span>next</span>".html_safe, '#', :class => "next"
     #slide-bar
   - else
     p.none Sorry, but this book doesn't have any photos yet! Please check back soon.
@@ -17,6 +17,6 @@
 #mobile-photos
   - unless @book.photos.empty?
     - @book.photos.each do |photo|
-      =link_to image_tag(photo.image.url(:thumb), :alt => "[#{photo.caption}]"), photo_path(photo)
+      = link_to image_tag(photo.image.url(:thumb), :alt => "[#{photo.caption}]"), photo_path(photo)
   - else
     p.none Sorry, but this book doesn't have any photos yet! Please check back soon.

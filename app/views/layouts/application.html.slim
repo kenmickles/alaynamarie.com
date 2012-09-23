@@ -19,25 +19,25 @@ html
     = javascript_include_tag 'application'
     javascript:
       $(function(){App.init("#{controller.controller_name.camelize}")});  
-    =csrf_meta_tags
+    = csrf_meta_tags
     
   body class="#{body_class}"
     #wrapper
       header
-        =link_to image_tag("logo.png", :alt => "Logo", :id => "logo"), root_path
+        = link_to image_tag("logo.png", :alt => "Logo", :id => "logo"), root_path
         - if is_wedding?
           nav.weddings
-            =link_to "About", "/weddings", :class => "weddings"
-            =link_to "Brides", "/weddings/brides", :class => "brides book4"
-            =link_to "Wedding Party", "/weddings/wedding-party", :class => "wedding-party book5"
-            =link_to "Reception", "/weddings/reception", :class => "reception book6"
-            =link_to "Before & After", "/weddings/before-and-after", :class => "before-and-after book7"
+            = link_to "About", "/weddings", :class => "weddings"
+            = link_to "Brides", "/weddings/brides", :class => "brides book4"
+            = link_to "Wedding Party", "/weddings/wedding-party", :class => "wedding-party book5"
+            = link_to "Reception", "/weddings/reception", :class => "reception book6"
+            = link_to "Before & After", "/weddings/before-and-after", :class => "before-and-after book7"
         - else
           nav.standard
             - 1.upto(3) do |i|
-              =link_to "Book #{i}", book_path(i), :class => "book#{i}"
-            =link_to "Bio", "/bio", :class => "bio"
-            =link_to "Contact", "/contact", :class => "contact"
+              = link_to "Book #{i}", book_path(i), :class => "book#{i}"
+            = link_to "Bio", "/bio", :class => "bio"
+            = link_to "Contact", "/contact", :class => "contact"
 
       #content.clearfix
         == yield
