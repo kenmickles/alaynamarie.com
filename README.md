@@ -1,0 +1,1 @@
+This is the source code for my friend Alayna's makeup portfolio site. It's pretty much your standard Rails 3 CRUD app.
