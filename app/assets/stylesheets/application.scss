@@ -4,8 +4,8 @@ body {
   font: 12pt arial, helvetica, sans-serif;
   color: #333;
   background-color: #fff;
-  background-image: url(bg.jpg);
-  background-repeat: repeat-both;
+  // background-image: url(bg.jpg);
+  // background-repeat: repeat-both;
 }
 
 a {
@@ -33,7 +33,7 @@ h3 {
   font: normal 1.2em  helvetica, arial, sans-serif;
   margin: 24px 0 14px;
   padding: 0;
-  letter-spacing: -0.02em;  
+  letter-spacing: -0.02em;
 }
 
 p.none {
@@ -60,8 +60,8 @@ header {
     position: absolute;
     left: 272px;
     bottom: 0;
-    height: 20px; 
-  
+    height: 20px;
+
     a {
       text-transform: uppercase;
       font: lighter italic 16px helvetica, arial, sans-serif;
@@ -69,7 +69,7 @@ header {
       display: block;
       margin-right: 62px;
     }
-    
+
     a:last-child {
       margin-right: 0;
     }
@@ -78,14 +78,14 @@ header {
       color: #999;
     }
   }
-  
+
   nav.weddings {
     left: 250px;
-    
+
     a {
       margin-right: 30px;
     }
-    
+
     a:last-child {
       margin-right: 0;
     }
@@ -113,12 +113,12 @@ body.pages.show {
     border: 1px solid #eee;
     @include box-shadow(0 4px 20px #eee);
     padding: 24px;
-    
+
     img {
       float: left;
       @include box-shadow(1px 4px 20px #888);
       margin: 1em 2em 1em .5em;
-    } 
+    }
   }
 }
 
@@ -136,7 +136,7 @@ body.books.show {
     width: 830px;
     overflow-x: hidden;
     position: relative;
-    
+
     ul, li {
       margin:0;
       padding:0;
@@ -152,13 +152,13 @@ body.books.show {
       float: left;
       position: relative;
       background-image: url(black_stripe.gif);
-      
+
       img {
         @include box-shadow(1px 1px 20px #111);
         height: 553px;
         max-width: none;
       }
-      
+
       .caption {
         position: absolute;
         bottom: 0;
@@ -172,10 +172,10 @@ body.books.show {
         background-image: url(caption_bg.png);
       }
     }
-    
+
     nav {
       display: none;
-      
+
       a {
         background: url(arrows.png);
         width: 30px;
@@ -184,23 +184,23 @@ body.books.show {
         position: absolute;
         top: 250px;
         outline: none;
-        
+
         span {
           display: none;
         }
       }
-      
+
       a.prev {
         left: 15px;
       }
-      
+
       a.next {
         right: 15px;
         background-position: -30px 0;
       }
     }
-    
-    &:hover nav {    
+
+    &:hover nav {
       display: block;
     }
   }
@@ -219,7 +219,7 @@ body.books.show {
       position: absolute;
       z-index: 2;
       margin-left:-50px;
-      top:-0.3em; 
+      top:-0.3em;
       outline: none;
     }
   }
@@ -233,10 +233,10 @@ body.photos.show {
       width: 100%;
       @include box-shadow(1px 4px 20px #888);
     }
-    
+
     nav {
       margin: 1em 0;
-      
+
       a {
         font-size: .96em;
         text-transform: lowercase;
@@ -244,16 +244,16 @@ body.photos.show {
         font-weight: normal;
         text-shadow: 1px 1px 9px #fff;
       }
-      
+
       a.prev {
         float: left;
       }
-      
+
       a.next {
         float: right;
       }
     }
-    
+
     .caption {
       font-size: .92em;
       background-color: #fff;
