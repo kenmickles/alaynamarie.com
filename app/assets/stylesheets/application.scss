@@ -1,12 +1,6 @@
+@import "media-queries";
 @import "bootstrap";
-
-body {
-  font: 12pt arial, helvetica, sans-serif;
-  color: #333;
-  background-color: #fff;
-  // background-image: url(bg.jpg);
-  // background-repeat: repeat-both;
-}
+@import "bootstrap-responsive";
 
 a {
   color: #000;
@@ -42,32 +36,37 @@ p.none {
 
 #wrapper {
   width: 830px;
+  max-width: 96%;
   margin: 50px auto;
 }
 
 header {
-  position: relative;
-  height: 94px;
-  margin-bottom: 30px;
+  @include clearfix;
+  margin-bottom: 25px;
 
   #logo {
-    position: absolute;
-    left: 0;
-    top: 0;
+    float: left;
+
+    img {
+      height: 78px;
+    }
+
+    small {
+      font: lighter italic 14px lato, helvetica, arial, sans-serif;
+      margin-left: 12px;
+    }
   }
 
   nav {
-    position: absolute;
-    left: 272px;
-    bottom: 0;
-    height: 20px;
+    float: right;
+    margin-top: 54px;
 
     a {
-      text-transform: uppercase;
-      font: lighter italic 16px helvetica, arial, sans-serif;
+      // text-transform: uppercase;
+      font: lighter italic 17px lato, helvetica, arial, sans-serif;
       float: left;
       display: block;
-      margin-right: 62px;
+      margin-right: 36px;
     }
 
     a:last-child {
@@ -117,7 +116,7 @@ body.pages.show {
     img {
       float: left;
       @include box-shadow(1px 4px 20px #888);
-      margin: 1em 2em 1em .5em;
+      margin: 2px 20px 12px 0;
     }
   }
 }
@@ -125,51 +124,39 @@ body.pages.show {
 /* Book page */
 
 body.books.show {
-  #mobile-photos {
-    display: none;
-  }
-
-  #slider {
-    @include box-shadow(1px 4px 20px #888);
-    margin-bottom: 20px;
-    height: 553px;
-    width: 830px;
-    overflow-x: hidden;
+  .swipe {
+    overflow: hidden;
+    visibility: hidden;
     position: relative;
+    @include box-shadow(1px 4px 20px #888);
+    background-image: url(black_stripe.gif);
 
-    ul, li {
-      margin:0;
-      padding:0;
-      list-style:none;
-      background-color: #333;
-      text-align: center;
-    }
-
-    li {
-      width:830px;
-      height:553px;
-      overflow:hidden;
-      float: left;
+    .swipe-wrap {
+      overflow: hidden;
       position: relative;
-      background-image: url(black_stripe.gif);
 
-      img {
-        @include box-shadow(1px 1px 20px #111);
-        height: 553px;
-        max-width: none;
-      }
+      > div {
+        float:left;
+        width:100%;
+        position: relative;
+        text-align: center;
 
-      .caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 806px;
-        color: #fff;
-        padding: 8px 12px;
-        text-align: left;
-        text-shadow: 1px 1px 2px #333;
-        font-size: .92em;
-        background-image: url(caption_bg.png);
+        img.photo {
+          max-height: 575px;
+        }
+
+        .caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          color: #fff;
+          padding: 8px 12px;
+          text-align: left;
+          text-shadow: 1px 1px 0 #111;
+          background-color: rgba(0, 0, 0, .4);
+          font-size: 12px;
+        }
       }
     }
 
@@ -182,7 +169,7 @@ body.books.show {
         height: 30px;
         display: block;
         position: absolute;
-        top: 250px;
+        top: 45%;
         outline: none;
 
         span {
@@ -191,11 +178,11 @@ body.books.show {
       }
 
       a.prev {
-        left: 15px;
+        left: 2%;
       }
 
       a.next {
-        right: 15px;
+        right: 2%;
         background-position: -30px 0;
       }
     }
@@ -205,61 +192,77 @@ body.books.show {
     }
   }
 
-  #slide-bar {
-    height: 8px;
-    background-color: #e2e2e2;
-    position: relative;
-    margin: 35px 35px 50px;
+  .thumbnails {
+    display: block;
+    margin: 15px;
 
-    a.ui-slider-handle {
-      background:url(slider.png);
-      font-weight:normal;
-      width: 100px;
-      height: 30px;
-      position: absolute;
-      z-index: 2;
-      margin-left:-50px;
-      top:-0.3em;
-      outline: none;
+    a {
+      img {
+        float: left;
+        margin: 8px;
+        width: 64px;
+        height: 64px;
+        @include opacity(80);
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+      }
+
+      &:hover, &.active {
+        img {
+          @include opacity(100);
+          filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+          -webkit-filter: grayscale(0%);
+        }
+      }
     }
   }
 }
 
-/* Photo page */
+/* Mobile styles */
 
-body.photos.show {
-  #content {
-    img#the_photo {
-      width: 100%;
-      @include box-shadow(1px 4px 20px #888);
+@include tablet-portrait-and-below {
+  #wrapper {
+    margin-top: 10px;
+  }
+
+  header {
+    margin-bottom: 20px;
+
+    #logo {
+      float: none;
+      margin-bottom: 10px;
     }
 
     nav {
-      margin: 1em 0;
+      margin: 0 0 25px 0;
+      float: none;
 
       a {
-        font-size: .96em;
-        text-transform: lowercase;
-        letter-spacing: -.04em;
-        font-weight: normal;
-        text-shadow: 1px 1px 9px #fff;
-      }
-
-      a.prev {
-        float: left;
-      }
-
-      a.next {
-        float: right;
+        margin-right: 20px;
       }
     }
+  }
 
-    .caption {
-      font-size: .92em;
-      background-color: #fff;
-      border: 1px solid #eee;
-      @include box-shadow(0 4px 20px #eee);
-      padding: 14px 12px 8px;
+  /* Books page */
+
+  body.books.show {
+    .thumbnails {
+      margin: 15px 7px;
+    }
+  }
+
+  /* Page page */
+
+  body.pages.show {
+    #content {
+      padding: 12px;
+
+      img {
+        float: none;
+        display: block;
+      }
     }
   }
 }
+

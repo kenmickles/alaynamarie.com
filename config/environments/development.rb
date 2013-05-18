@@ -11,7 +11,7 @@ AlaynaMarie::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = true #false
+  config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
@@ -27,17 +27,14 @@ AlaynaMarie::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
+
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
-  
+
   # Output pretty (indented) format
   Slim::Engine.set_default_options :pretty => true
-  
-  # memcache
-  config.cache_store = :dalli_store, "127.0.0.1:11211"
 end
