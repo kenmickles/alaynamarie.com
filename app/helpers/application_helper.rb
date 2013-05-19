@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def body_class
-    "#{controller.controller_name} #{controller.action_name} #{@body_class} #{controller.to_s.match(/Admin/) ? 'admin' : ''}"
+    @body_class ||= "#{controller.controller_name.dasherize} #{controller.action_name.dasherize} #{controller.to_s.match(/Admin/) ? 'admin' : ''}"
   end
 
   def is_wedding?

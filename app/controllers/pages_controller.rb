@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
     if @page.present?
       @page_title = @page.title
-      @body_class = @page.url.underscore
+      @body_class = "pages show #{@page.url.dasherize}"
     else
       render :file => "public/404.html", :status => 404, :layout => false
     end
