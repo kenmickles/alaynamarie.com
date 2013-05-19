@@ -39,8 +39,11 @@ $ ->
 
   # if a photo is specified in the hash, scroll to it automatically
   if location.hash.match(/^#photo[0-9]/)
-    index = location.hash.replace(/^#photo/, '')
-    swipe.slide index, 300
+    # wrap this in a set timeout to prevent FF from breaking
+    setTimeout ->
+      index = location.hash.replace(/^#photo/, '')
+      swipe.slide(index, 300)
+    , 100
 
   # update photo heights to fit window
   resize_photos = ->
