@@ -1,11 +1,11 @@
 class Photo < ActiveRecord::Base
   belongs_to :book
-    
+
   validates :book_id, :presence => true
   validates :image_file_name, :presence => true
-  
+
   after_create :set_birth_weight
-  
+
   # paperclip
   has_attached_file :image,
     :storage => :s3,
@@ -16,8 +16,8 @@ class Photo < ActiveRecord::Base
       :secret_access_key => ENV['S3_SECRET']
     },
     :bucket => ENV['S3_BUCKET']  ,
-    :styles => {:large => "830x830>", :medium => "560x560>", :thumb => "64x64#"}
-   
+    :styles => {:large => "830x830>", :medium => "560x560>", :thumb => "128x128#"}
+
   def prev
     book.photos.each_with_index do |photo, i|
       if photo.id == id
@@ -25,10 +25,10 @@ class Photo < ActiveRecord::Base
         break
       end
     end
-    
+
     @prev_photo
   end
-  
+
   def next
     book.photos.each_with_index do |photo, i|
       if photo.id == id
@@ -36,10 +36,10 @@ class Photo < ActiveRecord::Base
         break
       end
     end
-    
+
     @next_photo
   end
-  
+
   def set_birth_weight
     if book_id.present? and book.photos[-2].present?
       update_attribute(:weight, book.photos[-2].weight + 1)
