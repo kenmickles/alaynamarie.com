@@ -16,16 +16,16 @@ ActiveRecord::Schema.define(:version => 20120222234656) do
   create_table "books", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "pages", :force => true do |t|
     t.string   "url"
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "pages", ["url"], :name => "index_pages_on_url", :unique => true
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(:version => 20120222234656) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   add_index "photos", ["book_id"], :name => "index_photos_on_book_id"

@@ -12,7 +12,7 @@ class PagesController < ApplicationController
       @page_title = @page.title
       @body_class = "pages show #{@page.url.dasherize}"
     else
-      render :file => "public/404.html", :status => 404, :layout => false
+      render :file => "public/404", :status => 404, :layout => false, :format => "html"
     end
   end
 end

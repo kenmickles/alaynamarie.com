@@ -15,7 +15,7 @@ AlaynaMarie::Application.routes.draw do
     root :to => 'books#index'
     resources :books, :only => [:index, :edit, :update]
     resources :pages, :only => [:index, :edit, :update]
-    resources :photos
+    resources :photos, :except => [:index, :show]
   end
 
   # Send /login to the admin section
