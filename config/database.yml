@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   database: alaynamarie_dev
   username: root
-  password: root
+  password:
   host: 127.0.0.1
 
 # Warning: The database defined as "test" will be erased and
@@ -17,12 +17,12 @@ test:
   adapter: mysql2
   database: alaynamarie_test
   username: root
-  password: root
+  password:
   host: 127.0.0.1
 
 production:
   adapter: mysql2
   database: alaynamarie_production
   username: root
-  password: root
+  password:
   host: 127.0.0.1
