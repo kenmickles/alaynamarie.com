@@ -27,6 +27,6 @@ describe Photo do
   end
 
   it "has an attached image" do
-    create(:photo).image.url(:thumb).should match(/^http:\/\/s3\.amazonaws\.com\/alaynamarie-photos\//)
+    create(:photo).image.url(:thumb).should match(/^http:\/\/s3\.amazonaws\.com\/alaynamarie-photos/)
   end
 end
