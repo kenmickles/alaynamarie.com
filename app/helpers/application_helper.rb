@@ -21,4 +21,10 @@ module ApplicationHelper
 
     image_tag("lazy.png", options)
   end
+
+  def setting_value(name)
+    if (setting = Setting.find_by_name(name)).present?
+      setting.value
+    end
+  end
 end

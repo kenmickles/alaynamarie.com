@@ -1,0 +1,11 @@
+.page-header
+  h1 = @page_title
+  p = @setting.description
+
+= semantic_form_for @setting, :url => admin_setting_path do |f|
+  = f.inputs do
+    = f.input :value, :label => @setting.name.humanize
+
+  = f.actions do
+    = f.action :submit, :as => :button
+    small.cancel (or #{link_to "Cancel", :back})

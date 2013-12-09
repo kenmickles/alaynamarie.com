@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222234656) do
+ActiveRecord::Schema.define(:version => 20131209174328) do
 
   create_table "books", :force => true do |t|
     t.string   "name"
@@ -44,5 +44,13 @@ ActiveRecord::Schema.define(:version => 20120222234656) do
 
   add_index "photos", ["book_id"], :name => "index_photos_on_book_id"
   add_index "photos", ["weight"], :name => "index_photos_on_weight"
+
+  create_table "settings", :force => true do |t|
+    t.string "name",        :limit => 64, :null => false
+    t.string "value"
+    t.text   "description"
+  end
+
+  add_index "settings", ["name"], :name => "index_settings_on_name", :unique => true
 
 end

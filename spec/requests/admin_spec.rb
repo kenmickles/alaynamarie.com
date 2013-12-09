@@ -140,4 +140,10 @@ describe "Admin" do
     test_create "photo"
     test_destroy "photo"
   end
+
+  describe "Settings" do
+    test_index "setting"
+    test_edit "setting"
+    test_update "setting", {value: Faker::Lorem.sentence }
+  end
 end

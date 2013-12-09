@@ -21,8 +21,12 @@ form.formtastic {
     width: 600px;
     height: 300px;
   }
-  
+
   .form-actions small.cancel {
     margin-left: 10px;
+  }
+
+  input#setting_value {
+    width: 98%;
   }
 }

@@ -17,4 +17,10 @@ FactoryGirl.define do
     f.url { Faker::Lorem.word.parameterize }
     f.body { Faker::Lorem.paragraphs(3) }
   end
+
+  factory :setting do |f|
+    f.name { Faker::Lorem.word.downcase }
+    f.value { Faker::Lorem.sentence }
+    f.description { Faker::Lorem.paragraphs(1) }
+  end
 end

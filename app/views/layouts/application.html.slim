@@ -2,16 +2,16 @@ doctype html
 html
   head
     meta charset="UTF-8"
-    meta name="description" content="Alayna Rakes is a professional makeup artist serving the fashion and entertainment industries."
+    meta name="description" content="#{setting_value(:description)}"
     meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"
     link rel="shortcut icon" href="#{image_path 'favicon.png'}" type="image/x-png"
 
     - if is_wedding?
-      title Alayna Marie Rakes: Weddings
+      title = setting_value(:wedding_title)
     - elsif @page_title.present?
-      title #{@page_title} | Alayna Marie Rakes
+      title #{@page_title} | #{setting_value(:short_title)}
     - else
-      title Alayna Marie Rakes: Professional Makeup Artist, Philadelphia, New Jersey, New York
+      title = setting_value(:title)
 
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:400,300italic'
     = stylesheet_link_tag 'application'
@@ -23,7 +23,7 @@ html
       header
         #logo
           = link_to image_tag("logo.png", :alt => "Alayna Marie Rakes"), root_path
-          small.muted Makeup and Hair
+          small.muted = setting_value(:tagline)
         - if is_wedding?
           nav.weddings
             = link_to "About", "/weddings", :class => "weddings"

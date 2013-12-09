@@ -16,3 +16,4 @@
 
 # dev environment config
 .rvmrc
+.env

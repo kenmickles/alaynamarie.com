@@ -6,13 +6,13 @@ html
     title
       = "#{@page_title} |" if @page_title.present?
       '  alaynamarie.com control panel
-        
+
     = stylesheet_link_tag 'admin'
     = javascript_include_tag 'admin'
     = csrf_meta_tags
-    
+
   body class="#{body_class}"
-    .container 
+    .container
       .navbar.navbar-fixed-top
         .navbar-inner
           = link_to "alaynamarie.com", root_path, :class => "brand"
@@ -21,6 +21,9 @@ html
               = link_to "Books", admin_books_path
             li class="#{active_tab == 'pages' ? 'active' : ''}"
               = link_to "Pages", admin_pages_path
+            li class="#{active_tab == 'settings' ? 'active' : ''}"
+              = link_to "Settings", admin_settings_path
+
 
       #content.clearfix
         #flash
@@ -28,10 +31,10 @@ html
             .alert.alert-success
               = link_to "x", '#', :class => "close"
               p = notice
-              
+
           - if flash[:alert].present?
             .alert.alert-error
               = link_to "x", '#', :class => "close"
               p = alert
-      
+
         == yield

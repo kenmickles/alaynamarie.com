@@ -1,0 +1,19 @@
+
+.page-header
+  h1 = @page_title
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Description
+      th Value
+      th
+  tbody
+    - @settings.each do |setting|
+      tr
+        td = setting.name.humanize
+        td = setting.description
+        td
+          pre = setting.value
+        td = link_to "Edit", edit_admin_setting_path(setting), :class => "btn"
